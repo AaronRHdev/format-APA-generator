@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference APA Generator - Podcast</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/icons/references.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <img  class="icon-home" alt="icono home" src="../../assets/img/icons/home.png">
+            <a class="nav-container-link" href="../../index.html" class="inicio">Inicio</a>
+        </nav>
+    </header>
+    <main>
+        <div class="name-page"> <!-- name-page -->
+            <h1 class="title">Generador de referencias APA</h1>
+
+            <div class="subtittle-container">
+                <img class="reference-icon" alt="Icono de un microfono" src="../../assets/img/icons/podcast-2.png">
+                <h2 class="subtittle">Referencia para pódcast.</h2>
+            </div>
+            
+            <p>Por favor llena los datos solicitados.</p>
+
+            <div class="main-container"> <!-- main-container-->
+                <div class="form" id="form-container"> <!-- form-container-->
+                    <label>Título</label>
+                    <input type="text" class="box-of-text" id="tittle" placeholder="Título del episodio">
+        
+                    <label>Presentador</label>
+                    <input type="text" class="box-of-text" id="author" placeholder="Nombre del presentador">
+        
+                    <label>Fecha</label>
+                    <input type="date" class="box-of-text" id="date">
+
+                    <label>Episodio</label>
+                    <input type="number" class="box-of-text" id="episode" placeholder="Número del episodio">
+
+                    <label>Nombre</label>
+                    <input type="text" class="box-of-text" id="name-podcast" placeholder="Nombre del pódcast">
+
+                    <label>Productora</label>
+                    <input type="text" class="box-of-text" id="producer" placeholder="Nombre de la productora">
+        
+                    <label>URL</label>
+                    <input type="text" class="box-of-text" id="url" placeholder="URL de la página">
+        
+                </div> <!-- form-container-->
+                
+            <div class="buttons-container">
+                <button class="btn-generate" onclick="referencePodcast();">Generar Cita</button>
+                <button class="btn-generate btn-add-person" onclick="addPerson();">
+                    <img class="add-presenter" alt="icono para agregar presentador" src="/assets/img/icons/add-person.svg";>
+                </button>
+            </div>
+                
+    
+            </div> <!-- main-container-->
+        </div> <!-- name-page -->
+    </main>
+    <footer class="footer">
+        <p>Todos los derechos reservados - AaronRHdev © 2025</p>
+    </footer>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
