@@ -306,7 +306,7 @@ function copyToClipboard(){
 function createButtonCopy() {
     let btnCopy = document.createElement('img');
     btnCopy.setAttribute('onclick', 'copyToClipboard();');
-    btnCopy.src = '../../assets/img/icons/copy-light.svg';
+    btnCopy.src = '/format-APA-generator/assets/img/icons/copy-light.svg';
     btnCopy.classList.add('button-copy');
     btnCopy.id = 'copy-btn';
     btnCopy.style.width = '25px';
