@@ -8,6 +8,8 @@ let date = '';
 let boxReference = document.createElement('div');
 let textReference = document.createElement('p');
 const showReference = document.getElementById('form-container');
+let newImput = document.createElement('input');;
+let newLabel = document.createElement('label');
 
 // Settings for element created
 boxReference.classList.add('box-reference');
@@ -251,8 +253,8 @@ function formatAuthor(author){
 // Function to add a person
 function addPerson(textInLabel = 'Nueva Persona'){
     // First create the elements input and label
-    let newImput = document.createElement('input');
-    let newLabel = document.createElement('label');
+    newImput = document.createElement('input');
+    newLabel = document.createElement('label');
 
     // Declare the attributes for the imput
     newImput.type = 'text';
@@ -315,6 +317,8 @@ function createButtonCopy() {
 // Function to clear the screen and inputs
 function clearInputs(){
     showReference.removeChild(boxReference);
+    showReference.removeChild(newImput);
+    showReference.removeChild(newLabel);
 
     const inputs = document.querySelectorAll('input');
     inputs.forEach(input =>{
