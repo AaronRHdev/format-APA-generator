@@ -48,7 +48,13 @@
         
                 </div> <!-- form-container-->
     
-                <button class="btn-generate" onclick="referenceNewsPaper();">Generar Cita</button>
+                <div class="buttons-container">
+                    <button class="btn-generate btn-clean" onclick="clearInputs();">Limpiar</button>
+                    <button class="btn-generate" onclick="referenceNewsPaper();">Generar Cita</button>
+                    <button class="btn-generate btn-add-person" onclick="addPerson('Autor');">
+                        <img class="add-person" alt="Icono agregar persona" src="/assets/img/icons/add-person.svg";>
+                    </button>
+                </div>
     
             </div> <!-- main-container-->
 

@@ -51,7 +51,13 @@
                 <input type="text" class="box-of-text" id="country" placeholder="País de publicación">
             </div> <!-- form-container-->
 
-            <button class="btn-generate" onclick="referenceBook();">Generar Cita</button>
+            <div class="buttons-container">
+                <button class="btn-generate btn-clean" onclick="clearInputs();">Limpiar</button>
+                <button class="btn-generate" onclick="referencePodcast();">Generar Cita</button>
+                <button class="btn-generate btn-add-person" onclick="addPerson('Autor');">
+                    <img class="add-person" alt="icono agregar persona" src="/assets/img/icons/add-person.svg";>
+                </button>
+            </div>
 
         </div> <!-- main-container-->
 

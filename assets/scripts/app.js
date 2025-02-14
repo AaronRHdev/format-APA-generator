@@ -3,6 +3,7 @@ let author = "Author";
 let tittle = "tittle";
 let url = "";
 let splittedAuthor = [];
+let listPersons = [];
 let date = '';
 let boxReference = document.createElement('div');
 let textReference = document.createElement('p');
@@ -62,7 +63,10 @@ function referenceBook(){
           });
     } else {
         // Show the reference inside in a 'div' element
-        printReference(`${author} (${date}). ${tittle} ${(edition === '' ? '': 'Edición '+ edition + '.')} ${editor.charAt(0).toUpperCase() + editor.slice(1).toLowerCase() + '.'} ${(country === '' ? '' : country + '.')}`);
+        printReference(
+            `${author} (${date}). ${tittle} ${(edition === '' ? '': 'Edición '+ edition + '.')} 
+            ${editor.charAt(0).toUpperCase() + editor.slice(1).toLowerCase() + '.'} ${(country === '' ? '' : country + '.')}`
+        );
     }
 
     createButtonCopy();
@@ -147,61 +151,79 @@ function referencePodcast(){
     tittle = getTittle();
     date = getDateInBox();
     url = getURL();
-    author = getAuthor();
     
     let episode = document.getElementById('episode').value;
     let namePodcast = document.getElementById('name-podcast').value;
     let producer = document.getElementById('producer').value;
 
-    processPersons();
-
+    // check if the imputs are empty. The imputs can't are empty
+    if (tittle, author, url, episode, namePodcast, producer === '' || date === 's.f.'){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Por favor llena todos los datos.",
+            // footer: '<a href="#">Why do I have this issue?</a>'
+          });
+    } else {
+        // Show the reference inside in a 'div' element
+        printReference(
+            `${getAuthor()} ${(listPersons.length > 1) ? '(Presentadores)' : '(Presentador)'} (${date}). ${tittle} 
+            (Núm. ${episode}) [Episodio de pódcast de audio]. En ${namePodcast.charAt(0).toUpperCase()}${namePodcast.slice(1).toLowerCase()}. 
+            ${producer}. ${url}`
+        );
+    }
     
-
     createButtonCopy();
     return;
 }
 
 // Function to add a person
-function addPerson(){
+function addPerson(textInLabel = 'Nueva Persona'){
     // First create the elements input and label
     let newImput = document.createElement('input');
     let newLabel = document.createElement('label');
 
     // Declare the attributes for the imput
     newImput.type = 'text';
-    newImput.placeholder = 'Nombre del presentador';
+    newImput.placeholder = 'Nombre de la persona agregada';
     newImput.classList.add('box-of-text');
     newImput.id = 'author';
 
     // Assing the value to the label
-    newLabel.innerHTML = 'Presentador';
+    newLabel.innerHTML = textInLabel;
+
+    const firstInput = document.querySelector('#author');
 
     // Select the container in which it will be added the new elements
-    let container = document.getElementById('form-container');
+    // let container = document.getElementById('form-container');
+
+    if (firstInput){
+        firstInput.insertAdjacentElement('afterend', newImput);
+        firstInput.insertAdjacentElement('afterend', newLabel);
+    }
     
     // insert the new elements just before the input date, the reference is the children length - 10
-    container.insertBefore(newLabel, container.children[container.children.length - 10]);
-    container.insertBefore(newImput, container.children[container.children.length - 10]);
+    // container.insertBefore(newLabel, container.children[container.children.length - 10]);
+    // container.insertBefore(newImput, container.children[container.children.length - 10]);
 
     return;
 }
 
 // Function to save the persons in the list persons
-function processPersons(){
+function getAuthor(){
     const persons = document.querySelectorAll('#author');
-    let listPersons = [];
+    
 
-    persons.forEach((input, index) => {
+    persons.forEach((input) => {
         let name = [];
         name.push(input.value);
-
         listPersons.push(name);
-        let hola = getAuthor();
-        console.log(hola);
-    });
 
-    console.log(listPersons);
+    });
     
+    stringNames = listPersons.map(name => formatAuthor(name[0])).join(' & ');
+    console.log(listPersons);
+    return stringNames;
 }
 
 
@@ -215,8 +237,22 @@ function getTittle(){
 }
 
 // Function to generate the author in the input 
-function getAuthor(){
-    author = document.getElementById('author').value;
+// function getAuthor(){
+//     author = document.getElementById('author').value;
+//     splittedAuthor = author.split(' '); //Split the author and store in an array 
+//     if (author === ''){ // Check for if author is empty
+//         return '';
+//     } else {
+//         if (splittedAuthor.length > 1){
+//             return `${splittedAuthor[1].charAt(0).toUpperCase()}${splittedAuthor[1].slice(1)}, ${splittedAuthor[0].charAt(0).toUpperCase()}.`; // Show => Example, E.
+//         } else {
+//             return `${author.charAt(0).toLocaleUpperCase()}${author.slice(1)}.`; // Show Example.
+//         }
+//     }
+// }
+
+// Function to set the format to author
+function formatAuthor(author){
     splittedAuthor = author.split(' '); //Split the author and store in an array 
     if (author === ''){ // Check for if author is empty
         return '';
@@ -291,5 +327,12 @@ function createButtonCopy() {
     btnCopy.style.width = '25px';
     btnCopy.style.height = '25px';
     boxReference.appendChild(btnCopy);
+}
+
+function clearInputs(){
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input =>{
+        input.value = '';
+    });
 }
 
