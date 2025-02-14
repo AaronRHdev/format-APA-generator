@@ -1,6 +1,6 @@
 // Global Variables 
 let author = "Author";
-let tittle = "tittle";
+let title = "title";
 let url = "";
 let splittedAuthor = [];
 let listPersons = [];
@@ -20,15 +20,15 @@ textReference.classList.add('config-reference')
 
 // Function to generate the reference (only works in YouTube Reference)
 function referenceYouTube(){
-    // Declare and assing data from imputs to variables tittle, author, channel, date and url, respectively
-    tittle = getTittle();
+    // Declare and assing data from imputs to variables title, author, channel, date and url, respectively
+    title = getTittle();
     author = getAuthor();
     date = getDateInBox();
     url = getURL();
     let channel = document.getElementById('channel').value;
 
-    // check if the imputs (tittle, channel, url) are empty.  Author and date, can be empty
-    if (tittle === '' || channel === '' || url === ''){
+    // check if the imputs (title, channel, url) are empty.  Author and date, can be empty
+    if (title === '' || channel === '' || url === ''){
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -37,7 +37,7 @@ function referenceYouTube(){
           });
     } else {
         // Shwow the reference inside in a 'div' element
-        printReference(`${(author === '' ? '' : author)} ${(author === '' ? channel.charAt(0).toUpperCase()+channel.slice(1)+'.' : '['+channel.charAt(0).toUpperCase()+channel.slice(1)+'].')} (${date}). ${tittle} [Video]. YouTube. ${url}`);
+        printReference(`${(author === '' ? '' : author)} ${(author === '' ? channel.charAt(0).toUpperCase()+channel.slice(1)+'.' : '['+channel.charAt(0).toUpperCase()+channel.slice(1)+'].')} (${date}). ${title} [Video]. YouTube. ${url}`);
     }
 
     createButtonCopy();
@@ -46,15 +46,15 @@ function referenceYouTube(){
 
 // Function to generate the reference (only works in Book Reference)
 function referenceBook(){
-    tittle = getTittle();
+    title = getTittle();
     author = getAuthor();
     date = new Date(document.getElementById('date').value).getFullYear();
     let edition = document.getElementById('edition').value;
     let editor = document.getElementById('editor').value;
     let country = document.getElementById('country').value;
     
-    // check if the imputs (tittle, author, editor) are empty. Verify if date is not a number. Edition and Country, can be empty
-    if (tittle === '' || author === '' || editor === '' || isNaN(date) ){
+    // check if the imputs (title, author, editor) are empty. Verify if date is not a number. Edition and Country, can be empty
+    if (title === '' || author === '' || editor === '' || isNaN(date) ){
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -64,7 +64,7 @@ function referenceBook(){
     } else {
         // Show the reference inside in a 'div' element
         printReference(
-            `${author} (${date}). ${tittle} ${(edition === '' ? '': 'Edición '+ edition + '.')} 
+            `${author} (${date}). ${title} ${(edition === '' ? '': 'Edición '+ edition + '.')} 
             ${editor.charAt(0).toUpperCase() + editor.slice(1).toLowerCase() + '.'} ${(country === '' ? '' : country + '.')}`
         );
     }
@@ -75,14 +75,16 @@ function referenceBook(){
 
 // Function to generate the reference (only works in Newspaper Reference)
 function referenceNewsPaper(){
-    tittle = getTittle();
+    title = getTittle();
     author = getAuthor();
     date = getDateInBox();
+
+    // Select the values in inputs that contains id: name-newspaper and pages
     let nameNewsPaper = document.getElementById('name-newspaper').value;
     let pages = document.getElementById('pages').value;
 
     // check if the imputs are empty. The imputs can't are empty
-    if (tittle, author, nameNewsPaper, pages === '' || date === 's.f.'){
+    if (title, author, nameNewsPaper, pages === '' || date === 's.f.'){
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -91,7 +93,7 @@ function referenceNewsPaper(){
           });
     } else {
         // Show the reference inside in a 'div' element
-        printReference(`${author} (${date}). ${tittle} ${nameNewsPaper}. ${pages}`);
+        printReference(`${author} (${date}). ${title} ${nameNewsPaper}. ${pages}`);
     }
 
     createButtonCopy();
@@ -100,14 +102,14 @@ function referenceNewsPaper(){
 
 // Function to generate the reference (only works in Website Reference)
 function referenceWebSite(){
-    tittle = getTittle();
+    title = getTittle();
     author = getAuthor();
     date = getDateInBox();
     url = getURL();
     let blog = document.getElementById('name-website').value;
 
     // check for the imputs are empty (tiitle and url). Author, date and blog, can are empty
-    if (tittle === '' || url === ''){
+    if (title === '' || url === ''){
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -116,7 +118,7 @@ function referenceWebSite(){
           });
     } else {
         // Show the reference inside in a 'div' element
-        printReference(`${author} (${date}). ${tittle} ${blog}. ${url}`);
+        printReference(`${author} (${date}). ${title} ${blog}. ${url}`);
     }
 
     createButtonCopy();
@@ -125,13 +127,13 @@ function referenceWebSite(){
 
 // Function to generate the reference (only works in PDF Reference)
 function referencePDF(){
-    tittle = getTittle();
+    title = getTittle();
     author = getAuthor();
     url = getURL();
     date = new Date(document.getElementById('date').value).getFullYear();
     
-    // check for the imputs are empty (tittle and URL) Author and date can are empty
-    if (tittle === '' || url === ''){
+    // check for the imputs are empty (title and URL) Author and date can are empty
+    if (title === '' || url === ''){
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -139,7 +141,7 @@ function referencePDF(){
             // footer: '<a href="#">Why do I have this issue?</a>'
           });
     } else {
-        printReference(`${author} (${(isNaN(date) ? 's.f.': date)}). ${tittle} ${url}`);
+        printReference(`${author} (${(isNaN(date) ? 's.f.': date)}). ${title} ${url}`);
     }
 
     createButtonCopy();
@@ -148,7 +150,7 @@ function referencePDF(){
 
 // Function to generate the reference (only works in Podcast Reference)
 function referencePodcast(){
-    tittle = getTittle();
+    title = getTittle();
     date = getDateInBox();
     url = getURL();
     
@@ -157,17 +159,17 @@ function referencePodcast(){
     let producer = document.getElementById('producer').value;
 
     // check if the imputs are empty. The imputs can't are empty
-    if (tittle, author, url, episode, namePodcast, producer === '' || date === 's.f.'){
+    if (title, author, url, episode, namePodcast, producer === '' || date === 's.f.'){
         Swal.fire({
             icon: "error",
             title: "Oops...",
             text: "Por favor llena todos los datos.",
-            // footer: '<a href="#">Why do I have this issue?</a>'
+            // footer: '<a href="#">Why do I have this issue?</a>'  <-- disabled
           });
     } else {
         // Show the reference inside in a 'div' element
         printReference(
-            `${getAuthor()} ${(listPersons.length > 1) ? '(Presentadores)' : '(Presentador)'} (${date}). ${tittle} 
+            `${getAuthor()} ${(listPersons.length > 1) ? '(Presentadores)' : '(Presentador)'} (${date}). ${title} 
             (Núm. ${episode}) [Episodio de pódcast de audio]. En ${namePodcast.charAt(0).toUpperCase()}${namePodcast.slice(1).toLowerCase()}. 
             ${producer}. ${url}`
         );
@@ -177,37 +179,8 @@ function referencePodcast(){
     return;
 }
 
-// Function to add a person
-function addPerson(textInLabel = 'Nueva Persona'){
-    // First create the elements input and label
-    let newImput = document.createElement('input');
-    let newLabel = document.createElement('label');
 
-    // Declare the attributes for the imput
-    newImput.type = 'text';
-    newImput.placeholder = 'Nombre de la persona agregada';
-    newImput.classList.add('box-of-text');
-    newImput.id = 'author';
-
-    // Assing the value to the label
-    newLabel.innerHTML = textInLabel;
-
-    const firstInput = document.querySelector('#author');
-
-    // Select the container in which it will be added the new elements
-    // let container = document.getElementById('form-container');
-
-    if (firstInput){
-        firstInput.insertAdjacentElement('afterend', newImput);
-        firstInput.insertAdjacentElement('afterend', newLabel);
-    }
-    
-    // insert the new elements just before the input date, the reference is the children length - 10
-    // container.insertBefore(newLabel, container.children[container.children.length - 10]);
-    // container.insertBefore(newImput, container.children[container.children.length - 10]);
-
-    return;
-}
+/* ----- Funtions to get the input's values ------ */
 
 // Function to save the persons in the list persons
 function getAuthor(){
@@ -226,43 +199,16 @@ function getAuthor(){
     return stringNames;
 }
 
-
-// General Functions
-
-
-// Function to get the tittle
+// Function to get the title
 function getTittle(){
-    tittle = document.getElementById('tittle').value;
-    return tittle.charAt(0).toUpperCase() + tittle.slice(1).toLowerCase() + '.';
+    title = document.getElementById('title').value;
+    return title.charAt(0).toUpperCase() + title.slice(1).toLowerCase() + '.';
 }
 
-// Function to generate the author in the input 
-// function getAuthor(){
-//     author = document.getElementById('author').value;
-//     splittedAuthor = author.split(' '); //Split the author and store in an array 
-//     if (author === ''){ // Check for if author is empty
-//         return '';
-//     } else {
-//         if (splittedAuthor.length > 1){
-//             return `${splittedAuthor[1].charAt(0).toUpperCase()}${splittedAuthor[1].slice(1)}, ${splittedAuthor[0].charAt(0).toUpperCase()}.`; // Show => Example, E.
-//         } else {
-//             return `${author.charAt(0).toLocaleUpperCase()}${author.slice(1)}.`; // Show Example.
-//         }
-//     }
-// }
-
-// Function to set the format to author
-function formatAuthor(author){
-    splittedAuthor = author.split(' '); //Split the author and store in an array 
-    if (author === ''){ // Check for if author is empty
-        return '';
-    } else {
-        if (splittedAuthor.length > 1){
-            return `${splittedAuthor[1].charAt(0).toUpperCase()}${splittedAuthor[1].slice(1)}, ${splittedAuthor[0].charAt(0).toUpperCase()}.`; // Show => Example, E.
-        } else {
-            return `${author.charAt(0).toLocaleUpperCase()}${author.slice(1)}.`; // Show Example.
-        }
-    }
+// Function to get the URL
+function getURL(){
+    url = document.getElementById('url').value;
+    return url;
 }
 
 // Function to get the date and format the date
@@ -285,12 +231,50 @@ function getDateInBox(){
     }
 }
 
-// Function to get the URL
-function getURL(){
-    url = document.getElementById('url').value;
-    return url;
+
+/* -------- Utilities -------- */ 
+
+// Function to set the format to name author
+function formatAuthor(author){
+    splittedAuthor = author.split(' '); //Split the author and store in an array 
+    if (author === ''){ // Check for if author is empty
+        return '';
+    } else {
+        if (splittedAuthor.length > 1){
+            return `${splittedAuthor[1].charAt(0).toUpperCase()}${splittedAuthor[1].slice(1)}, ${splittedAuthor[0].charAt(0).toUpperCase()}.`; // Show => Example, E.
+        } else {
+            return `${author.charAt(0).toLocaleUpperCase()}${author.slice(1)}.`; // Show Example.
+        }
+    }
 }
 
+// Function to add a person
+function addPerson(textInLabel = 'Nueva Persona'){
+    // First create the elements input and label
+    let newImput = document.createElement('input');
+    let newLabel = document.createElement('label');
+
+    // Declare the attributes for the imput
+    newImput.type = 'text';
+    newImput.placeholder = 'Nombre de la persona agregada';
+    newImput.classList.add('box-of-text');
+    newImput.id = 'author';
+
+    // Assing the value to the label
+    newLabel.innerHTML = textInLabel;
+
+    // Select the container in which it will be added the new elements
+    // Select the default input, is use as reference
+    const firstInput = document.querySelector('#author');
+
+    // Check for the default input exist
+    if (firstInput){
+        firstInput.insertAdjacentElement('afterend', newImput);
+        firstInput.insertAdjacentElement('afterend', newLabel);
+    }
+
+    return;
+}
 
 // Function to add and format the elements for create de box reference
 function printReference( format = ``){
@@ -316,7 +300,6 @@ function copyToClipboard(){
     return;
 }
 
-
 // Function to create button with icon of copy to clipboard
 function createButtonCopy() {
     let btnCopy = document.createElement('img');
@@ -329,10 +312,14 @@ function createButtonCopy() {
     boxReference.appendChild(btnCopy);
 }
 
+// Function to clear the screen and inputs
 function clearInputs(){
+    showReference.removeChild(boxReference);
+
     const inputs = document.querySelectorAll('input');
     inputs.forEach(input =>{
         input.value = '';
     });
+    
 }
 

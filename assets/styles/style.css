@@ -1,32 +1,10 @@
 /* main settings */
 :root{
-    /* --color-text-opc1: #FFFFFF;
-    --color-text-opc2: #000000;
-    --color-text-reference: #1b66ff;
-    
-    --color-border-opc1: #000000;
-    --color-border-opc2: #05d3f8; 
-    --color-border-opc3: #21000f;
-    --color-bg-footer: #3A3A3A;
-    --color-bg-opc1: #F9EFD4;
-    --color-bg-opc2: #c5b89f;
-    --color-bg-opc3: #9e2d4a; */
-
-
-    /* Prueba 2 */
-
-    /* --color-bg-1: #8ac7de;
-    --color-bg-2: #f0f2dc;
-    --color-bg-3: #d9eb52;
-    --color-bg-4: #f26b7a;
-    
-    --color-border-1: #87796f; */
 
     --color-black: #000000;
     --color-white: #FFFFFF;
     --color-ghost-white: #f8f8ff;
 
-    /* Prueba 3 */
     --color-1: #ebdfcc;
     --color-2: #ff0841;
     --color-3: #b10c43;
@@ -81,12 +59,13 @@ p {
 
 .header{
     padding: 2% 0 0 5%;
+    display: flex;
+    justify-content: left;
 }
 
 .nav-container{
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 5px;
     cursor: pointer;
     background-color: var(--color-1);
@@ -113,6 +92,11 @@ p {
     }
 }
 
+.nav-btn{
+    display: flex;
+    align-items: center;
+}
+
 .icon-home{
     width: 2rem;
     height: 2rem;
@@ -133,6 +117,7 @@ p {
     margin: auto;
 }
 
+
 .subtittle-container{
     display: flex;
     align-items: center;
@@ -146,9 +131,6 @@ p {
 .main-container {
     margin: 20px auto;
     width: 60%;
-}
-
-.grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 10px;
@@ -208,7 +190,9 @@ p {
 
 
 /* Forms */
-
+.inputs-container{
+    display: block;
+}
 
 .box-of-text {
     width: 100%;
@@ -317,4 +301,45 @@ label {
     padding: 0;
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 425px){
+    .header{
+        justify-content: center;
+    }
+
+    .main-container{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .title{
+        font-size: 3rem;
+    }
+
+    .name-page{
+        p{
+            margin: 30px;
+        }  
+    }
+
+    .subtittle-container{
+        display: block;
+        margin: 30px;
+    }
+
+    .footer{
+        margin-top: 50px;
+    }
+
+    .buttons-container{
+        display: block;
+    }
+
+    .btn-generate{
+        margin-bottom: 5px;
+    }
+
 }
