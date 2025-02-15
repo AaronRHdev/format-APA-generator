@@ -1,35 +1,56 @@
 /* main settings */
 :root{
-
-    --color-black: #000000;
-    --color-white: #FFFFFF;
-    --color-ghost-white: #f8f8ff;
-
-    --color-1: #ebdfcc;
-    --color-2: #ff0841;
-    --color-3: #b10c43;
-    --color-4: #021b2b;
-    --color-5: #02031a;
-    --color-6: #dbf73b;
-    --color-7: #0fc3e8;
-    --color-8: #0194be;
-    --color-9: #aac709;
-
     --main-font: "Open Sans", serif;
-    
+    --text-fixed: #ffffff;
+    --bg-footer: #000000;
 }
 
 @media (prefers-color-scheme: dark){
-    body{
-        background-color: var(--color-4);
-        color: var(--color-white);
+    :root{
+
+        --bg-color: #0e0e0e;
+        --bg-color-2: #bfbfbf;
+
+        --bg-input: #262626;
+
+        --txt-color: #ffffff;
+        --txt-color-2: #000000;
+
+        --border-color: #3fe593;
+
+        --color-1: #000000;
+        --color-2: #262626;
+        --color-3: #0a0a0a;
+        --color-4: #6f6f6f;
+        --color-5: #02031a;
+        --color-6: #182c4c;
+        --color-7: #3f0bdb;
+        --color-8: #23067c;
+        --color-9: #051d44;
     }
 }
 
 @media (prefers-color-scheme: light){
-    body{
-        background-color: var(--color-white);
-        color: var(--color-black);
+    :root{
+        --bg-color: #ffffff;
+        --bg-color-2: #021b2b;
+
+        --bg-input: #f8f8ff;
+
+        --txt-color: #000000;
+        --txt-color-2: #ffffff;
+
+        --border-color: #000000;
+
+        --color-1: #ebdfcc;
+        --color-2: #ff0841;
+        --color-3: #b10c43;
+        --color-4: #021b2b;
+        --color-5: #02031a;
+        --color-6: #dbf73b;
+        --color-7: #0fc3e8;
+        --color-8: #0194be;
+        --color-9: #aac709;
     }
 }
 
@@ -39,9 +60,9 @@
 }
 
 body {
-    background-color: var(--color-white);
+    background-color: var(--bg-color);
     width: auto;
-    color: var(--color-black);
+    color: var(--txt-color);
     text-align: center;
     font-family: var(--main-font);
     box-sizing: border-box;
@@ -84,16 +105,16 @@ p {
     cursor: pointer;
     background-color: var(--color-1);
     width: 100px;
-    border: 2px solid var(--color-black);
+    border: 2px solid var(--border-color);
     border-radius: 5px;
     transition: ease-in;
 }
 
 .nav-container:hover{
-    background-color: var(--color-4);
+    background-color: var(--bg-color-2);
     
     .nav-container-link{
-        color: var(--color-white);
+        color: var(--txt-color-2);
     }
 
     .icon-home{
@@ -102,7 +123,7 @@ p {
         width: 2rem;
         height: 2rem;
         padding-left: 2rem;
-        background: url(/assets/img/icons/home-light.svg);
+        background: url(../../assets/img/icons/home-light.svg);
     }
 }
 
@@ -120,7 +141,7 @@ p {
     font-family: var(--main-font);
     font-size: 1.5rem;
     font-weight: 400;
-    color: var(--color-black);
+    color: var(--txt-color);
     text-decoration: none;
 }
 
@@ -168,18 +189,18 @@ p {
 .reference-container{
     background-color: var(--color-1);
     border-radius: 10px;
-    border-color: var(--color-black);
+    border-color: var(--border-color);
     border-style: solid;
     border-width: 3px;
     transition: all 0.5s;
 }
 
 .reference-container:hover{
-    background-color: var(--color-4);
+    background-color: var(--bg-color-2);
 
 
     .text-in-container {
-        color: var(--color-white);
+        color: var(--txt-color-2);
     }
 
     .icon-source {
@@ -192,7 +213,7 @@ p {
 }
 
 .text-in-container{
-    color:var(--color-black);
+    color:var(--txt-color);
     padding: 5px;
     margin: 0;
     font-size: 20px;
@@ -215,15 +236,25 @@ p {
     padding: 10px;
     border-radius: 8px;
     border-style: solid;
-    border-color: var(--color-black);
-    background-color: var(--color-ghost-white);
+    border-color: var(--border-color);
+    background-color: var(--bg-input);
     font-size: 13px;
 }
 
 label {
-    color: var(--color-black);
+    color: var(--txt-color);
     font-size: 18px;
     font-weight: bold;
+}
+
+input[type="date"]{
+    font-family: var(--main-font);
+    color: var(--txt-color);
+}
+
+::placeholder{
+    color: var(--txt-color);
+    font-family: var(--main-font);
 }
 
 .buttons-container{
@@ -239,7 +270,7 @@ label {
     background-color: var(--color-2);
     border-radius: 6px;
     border-style: solid;
-    color: var(--color-white);
+    color: var(--txt-color);
     transition: all 0.2s;
     cursor: pointer;
 }
@@ -258,7 +289,7 @@ label {
 
 .btn-clean{
     background-color: var(--color-6);
-    color: var(--color-black);
+    color: var(--txt-color);
     font-weight: 600;
 }
 
@@ -282,11 +313,11 @@ label {
     border-style: solid;
     border-radius: 6px;
     border-width: 2px;
-    border-color: var(--color-black);
+    border-color: var(--border-color);
 }
 
 .config-reference {
-    color: var(--color-white);
+    color: var(--txt-color-2);
     font-size: 18px;
     text-align: justify;
     overflow-wrap: break-word;
@@ -307,8 +338,8 @@ label {
 }
 
 .footer {
-    background-color: var(--color-4);
-    color: var(--color-white);
+    background-color: var(--bg-footer);
+    color: var(--text-fixed);
     width: 100%;
     min-height: 60px;
     margin-top: auto;
