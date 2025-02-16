@@ -246,6 +246,10 @@ label {
     font-weight: bold;
 }
 
+input {
+    color: var(--txt-color);
+}
+
 input[type="date"]{
     font-family: var(--main-font);
     color: var(--txt-color);
