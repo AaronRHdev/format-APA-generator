@@ -317,6 +317,7 @@ function createButtonCopy() {
 // Function to clear the screen and inputs
 function clearInputs(){
     showReference.removeChild(boxReference);
+    showReference.removeChild(newLabel);
 
     const inputs = document.querySelectorAll('input');
     inputs.forEach(input =>{
@@ -324,8 +325,11 @@ function clearInputs(){
     });
     
     const dynamicInputs = document.querySelectorAll('#author:not(#textInput1)');
-    dynamicInputs.forEach(input =>{
-        input.remove();
-    });
+    if (dynamicInputs.length > 0){
+        dynamicInputs.forEach(input =>{
+            input.remove();
+        });
+    }
+    
 }
 
