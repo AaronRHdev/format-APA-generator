@@ -187,7 +187,7 @@ function referencePodcast(){
 // Function to save the persons in the list persons
 function getAuthor(){
     const persons = document.querySelectorAll('#author');
-    
+    listPersons = [];
 
     persons.forEach((input) => {
         let name = [];
@@ -197,8 +197,9 @@ function getAuthor(){
     });
     
     stringNames = listPersons.map(name => formatAuthor(name[0])).join(' & ');
-    console.log(listPersons);
     return stringNames;
+    
+    
 }
 
 // Function to get the title
@@ -257,7 +258,7 @@ function addPerson(textInLabel = 'Nueva Persona'){
     newLabel = document.createElement('label');
 
     newLabel.id = 'new-label';
-    
+
     // Declare the attributes for the imput
     newImput.type = 'text';
     newImput.placeholder = 'Nombre de la persona agregada';
