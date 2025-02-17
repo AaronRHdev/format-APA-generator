@@ -256,6 +256,8 @@ function addPerson(textInLabel = 'Nueva Persona'){
     newImput = document.createElement('input');
     newLabel = document.createElement('label');
 
+    newLabel.id = 'new-label';
+    
     // Declare the attributes for the imput
     newImput.type = 'text';
     newImput.placeholder = 'Nombre de la persona agregada';
@@ -264,7 +266,6 @@ function addPerson(textInLabel = 'Nueva Persona'){
 
     // Assing the value to the label
     newLabel.innerHTML = textInLabel;
-
     // Select the container in which it will be added the new elements
     // Select the default input, is use as reference
     const firstInput = document.querySelector('#author');
@@ -316,20 +317,29 @@ function createButtonCopy() {
 
 // Function to clear the screen and inputs
 function clearInputs(){
-    showReference.removeChild(boxReference);
-    showReference.removeChild(newLabel);
+    const referenceGenerated = document.querySelectorAll('#box-reference-to-copy');
+    if (referenceGenerated.length > 0){
+        showReference.removeChild(boxReference);
+    }
+
+    const labelCreated = document.querySelectorAll('label#new-label');
+    if (labelCreated.length > 0){
+        showReference.removeChild(newLabel);
+    }
 
     const inputs = document.querySelectorAll('input');
     inputs.forEach(input =>{
         input.value = '';
     });
     
-    const dynamicInputs = document.querySelectorAll('#author:not(#textInput1)');
+    const dynamicInputs = document.querySelectorAll('input#author');
     if (dynamicInputs.length > 0){
-        dynamicInputs.forEach(input =>{
-            input.remove();
-        });
+        for(let i = 1; i < dynamicInputs.length; i++){
+            dynamicInputs[i].remove();
+            }
+        }
+        
     }
     
-}
+
 
