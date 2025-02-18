@@ -63,7 +63,18 @@
     }
 
     .nav-container:hover{
+        background-color: var(--bg-color-2);
+        
+        .nav-container-link{
+            color: var(--txt-color-2);
+        }
+    
         .icon-home{
+            box-sizing: border-box;
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            padding-left: 2rem;
             background: url(../../assets/img/icons/icons-light/home-light.svg);
         }
     }
