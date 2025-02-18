@@ -29,7 +29,7 @@
     }
 
     .icon-home:hover{
-        background: url('../../assets/img/icons/icons-dark/home-dark.svg');
+        background: url(../../assets/img/icons/icons-dark/home-dark.svg);
     }
 
 }
@@ -62,7 +62,7 @@
     }
 
     .icon-home:hover{
-        background: url('../../assets/img/icons/icons-dark/home-dark.svg');
+        background: url(../../assets/img/icons/icons-dark/home-dark.svg);
     }
 
 }
