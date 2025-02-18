@@ -61,8 +61,12 @@
         content: url('../../assets/img/icons/icons-dark/podcast-dark.svg');
     }
 
+    .icon-home{
+        content: url('../../assets/img/icons/icons-dark/home-dark.svg');
+    }
+
     .icon-home:hover{
-        background: url(../../assets/img/icons/icons-dark/home-dark.svg);
+        background: url(../../assets/img/icons/icons-light/home-light.svg);
     }
 
 }
@@ -136,6 +140,7 @@ p {
         width: 2rem;
         height: 2rem;
         padding-left: 2rem;
+        background: url(../../assets/img/icons/icons-dark/home-dark.svg);
     }
 }
 
