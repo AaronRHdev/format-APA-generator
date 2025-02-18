@@ -27,6 +27,14 @@
         --color-8: #23067c;
         --color-9: #051d44;
     }
+
+    .icon-home{
+        content: url(/assets/img/icons/icons-light/home-light.svg);
+    }
+
+    .icon-home:hover{
+        content: url(/assets/img/icons/icons-dark/home-dark.svg);
+    }
 }
 
 @media (prefers-color-scheme: light){
