@@ -29,7 +29,7 @@
     }
 
     .icon-home:hover{
-        content: url('../../assets/img/icons/icons-dark/home-dark.svg');
+        background: url('../../assets/img/icons/icons-dark/home-dark.svg');
     }
 
 }
@@ -62,7 +62,7 @@
     }
 
     .icon-home:hover{
-        content: url('../../assets/img/icons/icons-dark/home-dark.svg');
+        background: url('../../assets/img/icons/icons-dark/home-dark.svg');
     }
 
 }
@@ -136,7 +136,6 @@ p {
         width: 2rem;
         height: 2rem;
         padding-left: 2rem;
-        content: url('../../assets/img/icons/icons-dark/home-dark.svg');
     }
 }
 
