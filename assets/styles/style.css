@@ -62,8 +62,10 @@
         content: url('../../assets/img/icons/icons-dark/home-dark.svg');
     }
 
-    .icon-home:hover{
-        background: url(../../assets/img/icons/icons-light/home-light.svg);
+    .nav-container:hover{
+        .icon-home{
+            background: url(../../assets/img/icons/icons-light/home-light.svg);
+        }
     }
 
 }
