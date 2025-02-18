@@ -29,15 +29,15 @@
     }
 
     .icon-home{
-        content: url('/assets/img/icons/icons-light/home-light.svg');
+        content: url('./assets/img/icons/icons-light/home-light.svg');
     }
 
     .icon-home:hover{
-        content: url('/assets/img/icons/icons-dark/home-dark.svg');
+        content: url('./assets/img/icons/icons-dark/home-dark.svg');
     }
 
     .icon-podcast{
-        background: url('/assets/img/icons/icons-light/podcast-ligth.svg');
+        background: url('./assets/img/icons/icons-light/podcast-ligth.svg');
     }
 }
 
