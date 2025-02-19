@@ -8,24 +8,27 @@
 @media (prefers-color-scheme: dark){
     :root{
         --bg-color: #0e0e0e;
-        --bg-color-2: #bfbfbf;
+        --bg-color-2: #b08eff;
 
         --bg-input: #262626;
 
         --txt-color: #ffffff;
         --txt-color-2: #000000;
 
-        --border-color: #3fe593;
+        --border-color: #09cdec;
+        --border-btns: #5978f3;
 
         --color-1: #000000;
-        --color-2: #262626;
-        --color-3: #0a0a0a;
+        --color-2: #030d56;
+        --color-3: #000045;
         --color-4: #6f6f6f;
         --color-5: #02031a;
-        --color-6: #182c4c;
-        --color-7: #3f0bdb;
-        --color-8: #23067c;
-        --color-9: #051d44;
+        --color-6: #0d1127;
+        --color-7: #c5d5f1;
+        --color-8: #b1c7ec;
+        --color-9: #0f1c53;
+
+        --icon-home-hover: url(../../assets/img/icons/icons-dark/home-dark.svg);
     }
 
 
@@ -42,16 +45,19 @@
         --txt-color-2: #ffffff;
 
         --border-color: #000000;
+        --border-btns: #000000;
 
         --color-1: #ebdfcc;
-        --color-2: #ff0841;
-        --color-3: #b10c43;
+        --color-2: #9279c4;
+        --color-3: #614b92;
         --color-4: #021b2b;
         --color-5: #02031a;
-        --color-6: #dbf73b;
-        --color-7: #0fc3e8;
-        --color-8: #0194be;
-        --color-9: #aac709;
+        --color-6: #0a66c2;
+        --color-7: #d4d958;
+        --color-8: #878f05;
+        --color-9: #16437e;
+
+        --icon-home-hover: url(../../assets/img/icons/icons-light/home-light.svg);
     }
 
     .icon-podcast{
@@ -62,21 +68,30 @@
         content: url('../../assets/img/icons/icons-dark/home-dark.svg');
     }
 
-    .nav-container:hover{
-        background-color: var(--bg-color-2);
-        
-        .nav-container-link{
-            color: var(--txt-color-2);
-        }
-    
-        .icon-home{
-            box-sizing: border-box;
-            display: block;
-            width: 2rem;
-            height: 2rem;
-            padding-left: 2rem;
-            background: url(../../assets/img/icons/icons-light/home-light.svg);
-        }
+    /* Icons in subtitle */
+
+    .icon-subtitle-youtube{
+        content: url('../../assets/img/icons/icons-dark/youtube-dark.svg');
+    }
+
+    .icon-subtitle-book{
+        content: url('../../assets/img/icons/icons-dark/book-dark.svg');
+    }
+
+    .icon-subtitle-newspaper{
+        content: url('../../assets/img/icons/icons-dark/newspaper-dark.svg');
+    }
+
+    .icon-subtitle-website{
+        content: url('../../assets/img/icons/icons-dark/website-dark.svg');
+    }
+
+    .icon-subtitle-pdf{
+        content: url('../../assets/img/icons/icons-dark/pdf-dark.svg');
+    }
+
+    .icon-subtitle-podcast{
+        content: url('../../assets/img/icons/icons-dark/podcast-2-dark.svg');
     }
 
 }
@@ -150,7 +165,7 @@ p {
         width: 2rem;
         height: 2rem;
         padding-left: 2rem;
-        background: url(../../assets/img/icons/icons-dark/home-dark.svg);
+        background: var(--icon-home-hover);
     }
 }
 
@@ -180,7 +195,7 @@ p {
 }
 
 
-.subtittle-container{
+.subtitle-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -294,16 +309,21 @@ input[type="date"]{
 }
 
 .btn-generate {
-    display: block;
+    display: inline-flex;
     margin: auto;
+    background-color: var(--color-2);
+    border-color: var(--border-btns);
+    color: var(--text-fixed);
+    border-radius: 24px;
+    border-style: solid;
+    box-shadow: #3c40434d 0px 1px 3px 0px;
     width: 120px;
     height: 40px;
-    background-color: var(--color-2);
-    border-radius: 6px;
-    border-style: solid;
-    color: var(--txt-color);
-    transition: all 0.2s;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s;
 }
 
 .btn-generate:hover{
@@ -320,8 +340,7 @@ input[type="date"]{
 
 .btn-clean{
     background-color: var(--color-6);
-    color: var(--txt-color);
-    font-weight: 600;
+    color: var(--text-fixed);
 }
 
 .btn-clean:hover{
@@ -401,7 +420,7 @@ input[type="date"]{
         }  
     }
 
-    .subtittle-container{
+    .subtitle-container{
         display: block;
         margin: 30px;
     }
