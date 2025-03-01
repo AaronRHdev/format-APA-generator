@@ -7,11 +7,12 @@ Este proyecto es una herramienta que genera automáticamente citas y referencias
 ## Instalación
 
 https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/dark-mode.png
-https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/error-add.mkv
-https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/inputs.mkv
 https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/light-mode.png
-https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/main.mkv
-https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/ref-copy-clean-home.mkv
+
+https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/video/error-add.mp4
+https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/video/inputs.mp4
+https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/video/main.mp4
+https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/video/ref-copy-clean-home.mp4
 
 1. Clona este repositorio en tu máquina local:
    ```bash
@@ -27,7 +28,21 @@ El Format APA Generator es muy fácil de usar:
 
 1. Abre el archivo `index.html` en tu navegador o accede a: https://aaronrhdev.github.io/format-APA-generator/
 
-<picture><img src="https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/dark-mode.png"></picture> 2. Completa el formulario con la información requerida, como el nombre del autor, título, fecha de publicación, etc. 3. Haz clic en el botón "Generar cita" para que la cita en formato APA aparezca en la parte inferior de la pantalla. 4. Copia la cita generada y pégala donde la necesites.
+   ### Modo Claro
+      <picture><img src="https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/light-mode.png"></picture>
+
+
+   ### Modo Oscuro 
+      <picture><img src="https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/screenshots/dark-mode.png"></picture>
+
+2. Completa el formulario con la información requerida, como el nombre del autor, título, fecha de publicación, etc.
+   <video width="600" >
+  <source src="https://github.com/AaronRHdev/format-APA-generator/blob/main/assets/img/video/inputs.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
+4. Haz clic en el botón "Generar cita" para que la cita en formato APA aparezca en la parte inferior de la pantalla.
+5. Copia la cita generada y pégala donde la necesites.
+
 
 El generador está diseñado para manejar entradas de diferentes tipos de fuentes. Puedes seleccionar entre varias opciones, como libros, artículos o sitios web, según el tipo de referencia que quieras crear.
 
